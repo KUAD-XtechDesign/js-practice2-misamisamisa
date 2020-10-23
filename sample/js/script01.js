@@ -4,9 +4,13 @@ $(function(){
     let txt2 = "おげんきですか？";
     let num1 = 20;
     let num2 = 32;
+
+    function sayHello(){
+        $("#content").text("こんにちは！");
+    }
     　　
     $("#button01").on("click",function(){
-      $("#content").text("こんにちは！");
+      sayHello();
     })
     
     $("#button02").on("click",function(){
