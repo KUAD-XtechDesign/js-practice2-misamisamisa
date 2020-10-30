@@ -1,36 +1,36 @@
 $(function(){
  
-    let txt1 = "おはようございます！";
-    let txt2 = "おげんきですか？";
-    let num1 = 20;
-    let num2 = 32;
+  let hako = 0;
+
+  function checkBox(){
+    if(hako > 5){
+      $("#content").text(hako+"個入っています。箱はいっぱいです。箱を空にします");
+      hako = 0;
+    }else if(hako <= 0){
+      hako = 0;
+      $("#content").text(hako+"個。入っていません");
+
+    }else{
+      $("#content").text(hako+"個入っています。まだ入ります");
+    }
+  }
     　　
-    $("#button01").on("click",function(){
-      $("#content").text("こんにちは！");
-    })
+  $("#button01").on("click",function(){
+    checkBox()
+  })
     
-    $("#button02").on("click",function(){
-      $("#content").text(txt1);
-    })
+  $("#button02").on("click",function(){
+    hako = hako + 1;
+    checkBox()
+  })
     
-    $("#button03").on("click",function(){
-      $("#content").text(txt1 + txt2);
-    })
-    
-    $("#button04").on("click",function(){
-      $("#content").text(num1 + num2);
-    })
-    
-    // + - * /
-    
-    $("#button05").on("click",function(){
-      num1 = num1 + 10;
-      //$("#content").text(num1);
-    
-      $("#ball").css("margin-left",num1+'px')
-    })
-    
-    
+  $("#button03").on("click",function(){
+    hako = hako - 1;
+    checkBox()
    })
+  
+    
+    
+})
    
    
