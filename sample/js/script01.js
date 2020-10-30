@@ -8,17 +8,25 @@ $(function(){
     function sayHello(){
         $("#content").text("こんにちは！");
     }
+
+    function saySomething(txt){
+        $("#content").text(txt);
+    }
+
+    function samTwo(t1,t2){
+        $("#content").text(t1+t2);
+    }
     　　
     $("#button01").on("click",function(){
       sayHello();
     })
     
     $("#button02").on("click",function(){
-      $("#content").text(txt1);
+      saySomething(txt1)
     })
     
     $("#button03").on("click",function(){
-      $("#content").text(txt1 + txt2);
+      samTwo(txt1,txt2);
     })
     
     $("#button04").on("click",function(){
